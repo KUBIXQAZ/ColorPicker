@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ColorPicker"
+        xmlns:cc="clr-namespace:ColorPicker.CustomControls"
         mc:Ignorable="d"
         Icon="Resources/Icon/icon.ico"
         Title="ColorPicker"
@@ -20,7 +21,7 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <Rectangle Grid.Row="0" x:Name="selectedColorRectangle" Width="300" Height="50" HorizontalAlignment="Center" Margin="0 0 0 10"/>
-            <Rectangle Grid.Row="1" x:Name="colorGradientRectangle" Width="300" Height="300" MouseDown="ColorGradientRectangle_MouseDown" MouseMove="colorGradientRectangle_MouseMove" MouseUp="colorGradientRectangle_MouseUp"/>
+            <Rectangle Grid.Row="1" Style="{StaticResource ColorPicker}" x:Name="colorGradientRectangle" Width="300" Height="300" MouseDown="ColorGradientRectangle_MouseDown" MouseMove="colorGradientRectangle_MouseMove" MouseUp="colorGradientRectangle_MouseUp"/>
             <Grid Grid.Row="2" Width="300" Margin="0 5 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
@@ -33,15 +34,15 @@
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Column="0" Grid.Row="0" Content="R"/>
-                <Slider Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" ValueChanged="RValue_ValueChanged" IsSnapToTickEnabled="True" TickFrequency="1" Maximum="255" x:Name="RValue"/>
+                <cc:CustomSlider Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" ValueChanged="RValue_ValueChanged" IsSnapToTickEnabled="True" TickFrequency="1" Minimum="0" Maximum="255" x:Name="RValue"/>
                 <Label Grid.Column="2" Grid.Row="0" Content="0" x:Name="RLabel"/>
                 
                 <Label Grid.Column="0" Grid.Row="1" Content="G"/>
-                <Slider Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" ValueChanged="GValue_ValueChanged" IsSnapToTickEnabled="True" TickFrequency="1" Maximum="255" x:Name="GValue"/>
+                <cc:CustomSlider Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" ValueChanged="GValue_ValueChanged" IsSnapToTickEnabled="True" TickFrequency="1" Maximum="255" x:Name="GValue"/>
                 <Label Grid.Column="2" Grid.Row="1" Content="0" x:Name="GLabel"/>
                 
                 <Label Grid.Column="0" Grid.Row="2" Content="B"/>
-                <Slider Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" ValueChanged="BValue_ValueChanged" IsSnapToTickEnabled="True" TickFrequency="1" Maximum="255" x:Name="BValue"/>
+                <cc:CustomSlider Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" ValueChanged="BValue_ValueChanged" IsSnapToTickEnabled="True" TickFrequency="1" Maximum="255" x:Name="BValue"/>
                 <Label Grid.Column="2" Grid.Row="2" Content="0" x:Name="BLabel"/>
             </Grid>
             <Grid Grid.Row="3" Width="300" Margin="0 5 0 0">
