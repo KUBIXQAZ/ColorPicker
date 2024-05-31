@@ -23,8 +23,6 @@ namespace ColorPicker
         private WriteableBitmap colorBitmap;
         private bool isMouseDown = false;
         private Color color;
-        private bool RColorMouseDown = false;
-        private bool GColorMouseDown = false;
 
         public MainWindow()
         {
